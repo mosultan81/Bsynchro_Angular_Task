@@ -1,0 +1,24 @@
+<h1>Display Customer Information and Transactions</h1>
+<h2>Name: {{customerTransactions.name}}  {{customerTransactions.surname}}</h2>
+<h2>Balance: {{customerTransactions.balance}}</h2>
+<h2>Transactions Table:</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Transaction Id</th>
+            <th>Value</th>
+            <th>Account Id</th>
+            <th>Added Date</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let transaction of customerTransactions.transactions">
+                <td>{{transaction.transactioinId}}</td>
+                <td>{{transaction.initialCreditValue}}</td>
+                <td>{{transaction.accountId}}</td>
+                <td>{{transaction.addedDate | date:'dd/MM/yyyy'}}</td>
+            </tr>
+        <br />
+    </tbody>
+</table>
+<a routerLink="/" style="margin-left:300px;color:green;font-weight: bold;">Go Back</a>

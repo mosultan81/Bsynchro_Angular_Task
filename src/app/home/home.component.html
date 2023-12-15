@@ -1,0 +1,38 @@
+<br>
+<h1>Our Customers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Created Date</th>
+            <th>Number of Accounts</th>
+            <th>Customer Infos and Transactions</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.customerId}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.surname}}</td>
+                <td>{{customer.createdDate | date:'dd/MM/yyyy'}}</td>
+                <td>{{customer.numberOfAccounts}}</td>
+                <td><a routerLink="/CustomerInfos">view customer info and transactions</a></td>
+            </tr>
+        <br />
+    </tbody>
+</table>
+<br>
+<div class="form-container">
+    <div class="form-group">
+      <label for="input1">Enter a Customer Id from the above ones:</label>
+      <input type="number" id="input1" name="input1" placeholder="Enter Customer Id">
+    </div>
+  
+    <div class="form-group">
+      <label for="input2">Enter an initial credit value:</label>
+      <input type="number" id="input2" name="input2" placeholder="Enter Initial Credit">
+    </div>
+  </div>
+  <button style="margin-left:300px;" (click)="openNewAccount(2)">Add New Account for this Customer</button>
